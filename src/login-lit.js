@@ -54,7 +54,15 @@ export class LoginLit extends LitElement{
     _login(){
         const email = this.shadowRoot.querySelector("#email").value;
         const pass = this.shadowRoot.querySelector("#pass").value;
-        alert( email + pass);
+        if( !!email && !!pass){
+            this.dispatchEvent(new CustomEvent('sign',{
+                detail:{login: true},
+                bubbles: true,
+                composed: true
+            }))
+        };
+
+
     }
 
 }

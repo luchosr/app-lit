@@ -23,8 +23,12 @@ static get styles(){
   render() {
     return html`
 
-    ${this.success ? html`<h1>Welcome !!</h1>` : html` <login-lit></login-lit>`}
+    ${this.success ? html`<h1>Welcome !!</h1>` : html` <login-lit @sign="${this._hiddenLogin}" ></login-lit>`}
     
     `;
+  }
+
+  _hiddenLogin(){
+    this.success = true;
   }
 }
